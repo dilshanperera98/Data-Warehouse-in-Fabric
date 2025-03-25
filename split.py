@@ -1,4 +1,5 @@
 import pandas as pd
+import os
 
 # Load Excel file
 df = pd.read_excel("/Users/dilshanperera/Desktop/Cargills/Codes/dataset/sales_data_sample.xlsx")
@@ -34,15 +35,17 @@ fact_sales = df[['CUSTOMERNAME', 'ORDERNUMBER', 'PRODUCTCODE', 'ORDERDATE',
 fact_sales = fact_sales.merge(dim_customer, on='CUSTOMERNAME', how='left')
 fact_sales = fact_sales.merge(dim_status, on='STATUS', how='left')
 
-# Define Output File Path
-output_file = "/Users/dilshanperera/Desktop/Cargills/Codes/outputs/sales_data_output.xlsx"
+# Define Output Directory
+output_dir = "/Users/dilshanperera/Desktop/Cargills/Codes/outputs"
 
-# Save DataFrames to an Excel file with multiple sheets
-with pd.ExcelWriter(output_file, engine='xlsxwriter') as writer:
-    dim_customer.to_excel(writer, sheet_name="dim_customer", index=False)
-    dim_product.to_excel(writer, sheet_name="dim_product", index=False)
-    dim_time.to_excel(writer, sheet_name="dim_time", index=False)
-    dim_status.to_excel(writer, sheet_name="dim_status", index=False)
-    fact_sales.to_excel(writer, sheet_name="fact_sales", index=False)
+# Create output directory if it doesn't exist
+os.makedirs(output_dir, exist_ok=True)
 
-print(f"Excel file saved successfully at: {output_file}")
+# Save DataFrames to CSV files
+dim_customer.to_csv(os.path.join(output_dir, "dim_customer.csv"), index=False)
+dim_product.to_csv(os.path.join(output_dir, "dim_product.csv"), index=False)
+dim_time.to_csv(os.path.join(output_dir, "dim_time.csv"), index=False)
+dim_status.to_csv(os.path.join(output_dir, "dim_status.csv"), index=False)
+fact_sales.to_csv(os.path.join(output_dir, "fact_sales.csv"), index=False)
+
+print(f"CSV files saved successfully in: {output_dir}")
