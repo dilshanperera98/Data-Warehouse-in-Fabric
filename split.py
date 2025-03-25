@@ -11,7 +11,7 @@ if 'CUSTOMERNAME' not in df.columns:
 dim_customer = df[['CUSTOMERNAME', 'PHONE', 'ADDRESSLINE1', 'ADDRESSLINE2',
                    'CITY', 'STATE', 'POSTALCODE', 'COUNTRY', 'TERRITORY',
                    'CONTACTLASTNAME', 'CONTACTFIRSTNAME']].drop_duplicates()
-
+ 
 # Assign Customer ID
 dim_customer.insert(0, 'CUSTOMER_ID', range(1, len(dim_customer) + 1))
 
