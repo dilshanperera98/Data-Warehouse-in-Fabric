@@ -32,8 +32,8 @@ fact_sales = df[['CUSTOMERNAME', 'ORDERNUMBER', 'PRODUCTCODE', 'ORDERDATE',
                  'STATUS', 'DEALSIZE']]
 
 # Merge Fact Table with Dim Tables
-fact_sales = fact_sales.merge(dim_customer[['CUSTOMERNAME', 'CUSTOMER_ID']], on='CUSTOMERNAME', how='left')
-fact_sales = fact_sales.merge(dim_status[['STATUS', 'STATUS_ID']], on='STATUS', how='left')
+fact_sales = fact_sales.merge(dim_customer, on='CUSTOMERNAME', how='left')
+fact_sales = fact_sales.merge(dim_status, on='STATUS', how='left')
 
 # Define Output Directory
 output_dir = "/Users/dilshanperera/Desktop/Cargills/Codes/outputs"
@@ -41,41 +41,38 @@ output_dir = "/Users/dilshanperera/Desktop/Cargills/Codes/outputs"
 # Create output directory if it doesn't exist
 os.makedirs(output_dir, exist_ok=True)
 
-# CSV Filename
-csv_filename = "sales_data_consolidated.csv"
-csv_path = os.path.join(output_dir, csv_filename)
+# Define Output File Path
+output_file = os.path.join(output_dir, "sales_data_output.csv")
 
-# Add a table identifier column to each DataFrame
-fact_sales['TABLE_NAME'] = 'Fact_Sales'
-dim_customer['TABLE_NAME'] = 'Dim_Customer'
-dim_product['TABLE_NAME'] = 'Dim_Product'
-dim_time['TABLE_NAME'] = 'Dim_Time'
-dim_status['TABLE_NAME'] = 'Dim_Status'
+# Create a list to store all DataFrames with separators
+csv_sections = []
 
-# Combine all DataFrames
-combined_df = pd.concat([
-    fact_sales, 
-    dim_customer, 
-    dim_product, 
-    dim_time, 
-    dim_status
-], ignore_index=True)
+# Add each DataFrame with a separator
+csv_sections.append(pd.DataFrame({'Sheet': ['dim_customer']}))
+csv_sections.append(dim_customer)
+csv_sections.append(pd.DataFrame({'Sheet': ['dim_product']}))
+csv_sections.append(dim_product)
+csv_sections.append(pd.DataFrame({'Sheet': ['dim_time']}))
+csv_sections.append(dim_time)
+csv_sections.append(pd.DataFrame({'Sheet': ['dim_status']}))
+csv_sections.append(dim_status)
+csv_sections.append(pd.DataFrame({'Sheet': ['fact_sales']}))
+csv_sections.append(fact_sales)
 
-# Add a separator row between tables
-separator_row = pd.DataFrame({col: '---' for col in combined_df.columns}, index=[0])
-final_df = pd.concat([combined_df, separator_row], ignore_index=True)
+# Combine all sections
+combined_df = pd.concat(csv_sections, ignore_index=True)
 
 # Save to CSV
-final_df.to_csv(csv_path, index=False)
+combined_df.to_csv(output_file, index=False)
 
-print(f"CSV file saved successfully at: {csv_path}")
+print(f"CSV file saved successfully at: {output_file}")
 
-# Verify the contents of the CSV file
-print("\nCSV Details:")
-print(f"Total rows: {len(final_df)}")
-print(f"Columns: {', '.join(final_df.columns)}")
-
-# Print row counts for each table
-print("\nRows per Table:")
-table_counts = final_df['TABLE_NAME'].value_counts()
-print(table_counts)
+# Print details about the output
+print("\nOutput Details:")
+print(f"Total rows: {len(combined_df)}")
+print("\nRows per sheet:")
+print(f"dim_customer: {len(dim_customer)} rows")
+print(f"dim_product: {len(dim_product)} rows")
+print(f"dim_time: {len(dim_time)} rows")
+print(f"dim_status: {len(dim_status)} rows")
+print(f"fact_sales: {len(fact_sales)} rows")
