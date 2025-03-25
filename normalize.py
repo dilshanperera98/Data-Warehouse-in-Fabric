@@ -36,64 +36,16 @@ fact_sales = fact_sales.merge(dim_customer, on='CUSTOMERNAME', how='left')
 fact_sales = fact_sales.merge(dim_status, on='STATUS', how='left')
 
 # Define Output Directory
-output_dir = "/Users/dilshanperera/Desktop/Cargills/Codes/outputs"
+output_dir = "/Users/dilshanperera/Desktop/Cargills/Codes/outputs/"
 
 # Create output directory if it doesn't exist
 os.makedirs(output_dir, exist_ok=True)
 
-# Define Output File Paths
-xlsx_output_file = os.path.join(output_dir, "sales_data_output.xlsx")
-csv_output_file = os.path.join(output_dir, "sales_data_output.csv")
+# Save DataFrames to CSV files
+dim_customer.to_csv(os.path.join(output_dir, "dim_customer.csv"), index=False)
+dim_product.to_csv(os.path.join(output_dir, "dim_product.csv"), index=False)
+dim_time.to_csv(os.path.join(output_dir, "dim_time.csv"), index=False)
+dim_status.to_csv(os.path.join(output_dir, "dim_status.csv"), index=False)
+fact_sales.to_csv(os.path.join(output_dir, "fact_sales.csv"), index=False)
 
-# Save DataFrames to Excel file with multiple sheets
-with pd.ExcelWriter(xlsx_output_file, engine='xlsxwriter') as writer:
-    dim_customer.to_excel(writer, sheet_name="dim_customer", index=False)
-    dim_product.to_excel(writer, sheet_name="dim_product", index=False)
-    dim_time.to_excel(writer, sheet_name="dim_time", index=False)
-    dim_status.to_excel(writer, sheet_name="dim_status", index=False)
-    fact_sales.to_excel(writer, sheet_name="fact_sales", index=False)
-
-print(f"Excel file saved successfully at: {xlsx_output_file}")
-
-# Prepare CSV output with sheet indicators
-# Create a list to store all DataFrames with separators
-csv_sections = []
-
-# Function to add a sheet separator
-def add_sheet_separator(sheet_name):
-    return pd.DataFrame({'SHEET_SEPARATOR': [f'--- START OF {sheet_name.upper()} SHEET ---']})
-
-# Add each DataFrame with a separator
-csv_sections.append(add_sheet_separator('dim_customer'))
-csv_sections.append(dim_customer)
-
-csv_sections.append(add_sheet_separator('dim_product'))
-csv_sections.append(dim_product)
-
-csv_sections.append(add_sheet_separator('dim_time'))
-csv_sections.append(dim_time)
-
-csv_sections.append(add_sheet_separator('dim_status'))
-csv_sections.append(dim_status)
-
-csv_sections.append(add_sheet_separator('fact_sales'))
-csv_sections.append(fact_sales)
-
-# Combine all sections
-combined_df = pd.concat(csv_sections, ignore_index=True)
-
-# Save to CSV
-combined_df.to_csv(csv_output_file, index=False)
-
-print(f"CSV file saved successfully at: {csv_output_file}")
-
-# Print details about the output
-print("\nOutput Details:")
-print(f"XLSX Total sheets: 5")
-print(f"CSV Total rows: {len(combined_df)}")
-print("\nRows per sheet:")
-print(f"dim_customer: {len(dim_customer)} rows")
-print(f"dim_product: {len(dim_product)} rows")
-print(f"dim_time: {len(dim_time)} rows")
-print(f"dim_status: {len(dim_status)} rows")
-print(f"fact_sales: {len(fact_sales)} rows")
+print(f"CSV files saved successfully in: {output_dir}")
