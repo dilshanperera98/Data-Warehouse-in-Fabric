@@ -82,6 +82,9 @@ This project demonstrates the steps taken to process and normalize data, build a
 
 <img width="1440" alt="05" src="https://github.com/user-attachments/assets/3bac4edd-f6f7-4269-b034-779a7e7903f1" />
 
+<img width="1440" alt="06" src="https://github.com/user-attachments/assets/f42d964a-74a4-4b6b-ad6d-b30e3946efd6" />
+
+
 
 
 ## 3. Building the Data Warehouse
@@ -92,10 +95,22 @@ This project demonstrates the steps taken to process and normalize data, build a
 - **Step 4.1**: Created a data transfer pipeline to move the data from the Data Lakehouse to the Data Warehouse. The pipeline ensured that data was ingested, transformed, and loaded (ETL process) into the warehouse seamlessly.
 - **Step 4.2**: Automated the transfer process to ensure that the data is always up-to-date and available for reporting and analysis.
 
+<img width="1440" alt="07" src="https://github.com/user-attachments/assets/aec3cc17-41db-47c4-9aa7-703b6e9418f9" />
+
+
+<img width="1440" alt="08" src="https://github.com/user-attachments/assets/78ce3b90-9e44-4a0d-8f7f-4454246c628a" />
+
+
+  
+<img width="1440" alt="09" src="https://github.com/user-attachments/assets/8ad23db6-2840-4dcf-b85a-872d68f03a8c" />
+
 ## 5. SQL Views and Stored Procedures
 - **Step 5.1**: Created SQL views in the Data Warehouse to facilitate easy querying and reporting of the data.
 - **Step 5.2**: Developed stored procedures to encapsulate complex business logic and automate routine tasks.
 - **Step 5.3**: Linked the SQL views and stored procedures with Power BI for real-time reporting and visualization.
+
+  <img width="1440" alt="10" src="https://github.com/user-attachments/assets/d91b6faf-6dde-4212-bb8a-b3bb5a26c958" />
+
 
 ## 6. Final Steps: Linking Power BI
 - **Step 6.1**: Established a connection between Power BI and the SQL views in the Data Warehouse.
