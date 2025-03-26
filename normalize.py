@@ -37,7 +37,7 @@ fact_sales = fact_sales.merge(dim_status, on='STATUS', how='left')
 
 # Define Output Directory
 output_dir = "/Users/dilshanperera/Desktop/Cargills/Codes/outputs/"
-
+  
 # Create output directory if it doesn't exist
 os.makedirs(output_dir, exist_ok=True)
 
