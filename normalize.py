@@ -40,7 +40,7 @@ output_dir = "/Users/dilshanperera/Desktop/Cargills/Codes/outputs/"
   
 # Create output directory if it doesn't exist
 os.makedirs(output_dir, exist_ok=True)
-
+ 
 # Save DataFrames to CSV files
 dim_customer.to_csv(os.path.join(output_dir, "dim_customer.csv"), index=False)
 dim_product.to_csv(os.path.join(output_dir, "dim_product.csv"), index=False)
