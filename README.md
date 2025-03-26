@@ -67,13 +67,22 @@ This project demonstrates the steps taken to process and normalize data, build a
 <img width="1440" alt="01" src="https://github.com/user-attachments/assets/fd7f9d21-abaf-4f14-9a44-fe48eee14823" />
 
 
-
 ## 2. Creating the Data Lakehouse
 - **Step 2.1**: Designed and created a Data Lakehouse named `Sales_Lakehouse` to store the normalized data.
 - **Step 2.2**: Utilized PySpark in a Jupyter Notebook to interact with the data and perform necessary checks.
 - **Step 2.3**: Checked for missing values (null values) in each column and identified the percentage of nulls in the dataset.
 - **Step 2.4**: Identified and handled any duplicated data in the dataset, ensuring data integrity.
 - **Step 2.5**: Stored the cleaned and transformed data in the Data Lakehouse, which served as the source for further analysis.
+
+<img width="1440" alt="02" src="https://github.com/user-attachments/assets/69157d12-84d6-4d9d-a9fa-2d36687a7c2b" />
+
+<img width="1440" alt="03" src="https://github.com/user-attachments/assets/d834ac9d-bb4d-4ca2-b6bb-e07eb99ee91e" />
+
+<img width="1440" alt="04" src="https://github.com/user-attachments/assets/1024232a-5903-468f-a8cf-948c36501828" />
+
+<img width="1440" alt="05" src="https://github.com/user-attachments/assets/3bac4edd-f6f7-4269-b034-779a7e7903f1" />
+
+
 
 ## 3. Building the Data Warehouse
 - **Step 3.1**: Designed and implemented a Data Warehouse based on the project requirements.
