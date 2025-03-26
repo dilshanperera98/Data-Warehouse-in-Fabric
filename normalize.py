@@ -34,7 +34,7 @@ fact_sales = df[['CUSTOMERNAME', 'ORDERNUMBER', 'PRODUCTCODE', 'ORDERDATE',
 # Merge Fact Table with Dim Tables
 fact_sales = fact_sales.merge(dim_customer, on='CUSTOMERNAME', how='left')
 fact_sales = fact_sales.merge(dim_status, on='STATUS', how='left')
-      
+
 # Define Output Directory
 output_dir = "/Users/dilshanperera/Desktop/Cargills/Codes/outputs/"
   
