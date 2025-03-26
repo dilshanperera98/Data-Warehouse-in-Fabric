@@ -46,6 +46,8 @@ A simple **Power BI dashboard** will be created to present the transformed sales
 - **PySpark**: For big data processing and transformation.
 - **Power BI**: For creating interactive dashboards and reports.
 
+![Fabric1](https://github.com/user-attachments/assets/11e399bb-253e-4205-8681-33748c99048f)
+
 
 ## Project Structure
 
