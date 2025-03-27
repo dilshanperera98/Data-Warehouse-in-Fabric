@@ -1,0 +1,1199 @@
+{
+  "name": "{{Dataset_Name}}",
+  "compatibilityLevel": 1604,
+  "model": {
+    "name": "{{Dataset_Name}}",
+    "culture": "en-US",
+    "collation": "Latin1_General_100_BIN2_UTF8",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "dim_customers",
+        "sourceLineageTag": "[dbo].[dim_customers]",
+        "columns": [
+          {
+            "name": "CUSTOMER_ID (String)",
+            "dataType": "string",
+            "sourceColumn": "CUSTOMER_ID (String)",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CUSTOMER_ID (String)",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "dim_customers",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "True"
+          }
+        ]
+      },
+      {
+        "name": "dim_customers_new",
+        "sourceLineageTag": "[dbo].[dim_customers_new]",
+        "columns": [
+          {
+            "name": "CUSTOMER_ID (String)",
+            "dataType": "string",
+            "sourceColumn": "CUSTOMER_ID (String)",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CUSTOMER_ID (String)",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CUSTOMERNAME",
+            "dataType": "string",
+            "sourceColumn": "CUSTOMERNAME",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CUSTOMERNAME",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "PHONE",
+            "dataType": "string",
+            "sourceColumn": "PHONE",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "PHONE",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ADDRESSLINE1",
+            "dataType": "string",
+            "sourceColumn": "ADDRESSLINE1",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "ADDRESSLINE1",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ADDRESSLINE2",
+            "dataType": "string",
+            "sourceColumn": "ADDRESSLINE2",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "ADDRESSLINE2",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CITY",
+            "dataType": "string",
+            "sourceColumn": "CITY",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CITY",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "STATE",
+            "dataType": "string",
+            "sourceColumn": "STATE",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "STATE",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "POSTALCODE",
+            "dataType": "string",
+            "sourceColumn": "POSTALCODE",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "POSTALCODE",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "COUNTRY",
+            "dataType": "string",
+            "sourceColumn": "COUNTRY",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "COUNTRY",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "TERRITORY",
+            "dataType": "string",
+            "sourceColumn": "TERRITORY",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "TERRITORY",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CONTACTLASTNAME",
+            "dataType": "string",
+            "sourceColumn": "CONTACTLASTNAME",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CONTACTLASTNAME",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CONTACTFIRSTNAME",
+            "dataType": "string",
+            "sourceColumn": "CONTACTFIRSTNAME",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CONTACTFIRSTNAME",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "dim_customers_new",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "True"
+          }
+        ]
+      },
+      {
+        "name": "dim_product",
+        "sourceLineageTag": "[dbo].[dim_product]",
+        "columns": [
+          {
+            "name": "PRODUCTCODE",
+            "dataType": "string",
+            "sourceColumn": "PRODUCTCODE",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "PRODUCTCODE",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "PRODUCTLINE",
+            "dataType": "string",
+            "sourceColumn": "PRODUCTLINE",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "PRODUCTLINE",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "MSRP",
+            "dataType": "string",
+            "sourceColumn": "MSRP",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "MSRP",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "dim_product",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "True"
+          }
+        ]
+      },
+      {
+        "name": "dim_status",
+        "sourceLineageTag": "[dbo].[dim_status]",
+        "columns": [
+          {
+            "name": "STATUS_ID",
+            "dataType": "string",
+            "sourceColumn": "STATUS_ID",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "STATUS_ID",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "STATUS",
+            "dataType": "string",
+            "sourceColumn": "STATUS",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "STATUS",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "dim_status",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "True"
+          }
+        ]
+      },
+      {
+        "name": "dim_time",
+        "sourceLineageTag": "[dbo].[dim_time]",
+        "columns": [
+          {
+            "name": "ORDERDATE",
+            "dataType": "string",
+            "sourceColumn": "ORDERDATE",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "ORDERDATE",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "YEAR_ID",
+            "dataType": "string",
+            "sourceColumn": "YEAR_ID",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "YEAR_ID",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "MONTH_ID",
+            "dataType": "string",
+            "sourceColumn": "MONTH_ID",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "MONTH_ID",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "QTR_ID",
+            "dataType": "string",
+            "sourceColumn": "QTR_ID",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "QTR_ID",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "dim_time",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "True"
+          }
+        ]
+      },
+      {
+        "name": "fact_sales",
+        "sourceLineageTag": "[dbo].[fact_sales]",
+        "columns": [
+          {
+            "name": "CUSTOMERNAME",
+            "dataType": "string",
+            "sourceColumn": "CUSTOMERNAME",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CUSTOMERNAME",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ORDERNUMBER",
+            "dataType": "string",
+            "sourceColumn": "ORDERNUMBER",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "ORDERNUMBER",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "PRODUCTCODE",
+            "dataType": "string",
+            "sourceColumn": "PRODUCTCODE",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "PRODUCTCODE",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ORDERDATE",
+            "dataType": "string",
+            "sourceColumn": "ORDERDATE",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "ORDERDATE",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "QUANTITYORDERED",
+            "dataType": "string",
+            "sourceColumn": "QUANTITYORDERED",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "QUANTITYORDERED",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "PRICEEACH",
+            "dataType": "string",
+            "sourceColumn": "PRICEEACH",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "PRICEEACH",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "SALES",
+            "dataType": "string",
+            "sourceColumn": "SALES",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "SALES",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ORDERLINENUMBER",
+            "dataType": "string",
+            "sourceColumn": "ORDERLINENUMBER",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "ORDERLINENUMBER",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "STATUS",
+            "dataType": "string",
+            "sourceColumn": "STATUS",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "STATUS",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "DEALSIZE",
+            "dataType": "string",
+            "sourceColumn": "DEALSIZE",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "DEALSIZE",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CUSTOMER_ID",
+            "dataType": "string",
+            "sourceColumn": "CUSTOMER_ID",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CUSTOMER_ID",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "PHONE",
+            "dataType": "string",
+            "sourceColumn": "PHONE",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "PHONE",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ADDRESSLINE1",
+            "dataType": "string",
+            "sourceColumn": "ADDRESSLINE1",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "ADDRESSLINE1",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ADDRESSLINE2",
+            "dataType": "string",
+            "sourceColumn": "ADDRESSLINE2",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "ADDRESSLINE2",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CITY",
+            "dataType": "string",
+            "sourceColumn": "CITY",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CITY",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "STATE",
+            "dataType": "string",
+            "sourceColumn": "STATE",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "STATE",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "POSTALCODE",
+            "dataType": "string",
+            "sourceColumn": "POSTALCODE",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "POSTALCODE",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "COUNTRY",
+            "dataType": "string",
+            "sourceColumn": "COUNTRY",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "COUNTRY",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "TERRITORY",
+            "dataType": "string",
+            "sourceColumn": "TERRITORY",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "TERRITORY",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CONTACTLASTNAME",
+            "dataType": "string",
+            "sourceColumn": "CONTACTLASTNAME",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CONTACTLASTNAME",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CONTACTFIRSTNAME",
+            "dataType": "string",
+            "sourceColumn": "CONTACTFIRSTNAME",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CONTACTFIRSTNAME",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "STATUS_ID",
+            "dataType": "string",
+            "sourceColumn": "STATUS_ID",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "STATUS_ID",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "fact_sales",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "True"
+          }
+        ]
+      },
+      {
+        "name": "vw_CustomerDealSizeDistribution",
+        "sourceLineageTag": "[dbo].[vw_CustomerDealSizeDistribution]",
+        "columns": [
+          {
+            "name": "DEALSIZE",
+            "dataType": "string",
+            "sourceColumn": "DEALSIZE",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "DEALSIZE",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "OrderCount",
+            "dataType": "int64",
+            "sourceColumn": "OrderCount",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "OrderCount",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CustomerCount",
+            "dataType": "int64",
+            "sourceColumn": "CustomerCount",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "CustomerCount",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "TotalRevenue",
+            "dataType": "double",
+            "sourceColumn": "TotalRevenue",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "TotalRevenue",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "AvgDealAmount",
+            "dataType": "double",
+            "sourceColumn": "AvgDealAmount",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "AvgDealAmount",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "vw_CustomerDealSizeDistribution",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "True"
+          }
+        ]
+      },
+      {
+        "name": "vw_MonthlyRevenueTrend",
+        "sourceLineageTag": "[dbo].[vw_MonthlyRevenueTrend]",
+        "columns": [
+          {
+            "name": "YEAR_ID",
+            "dataType": "string",
+            "sourceColumn": "YEAR_ID",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "YEAR_ID",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "MONTH_ID",
+            "dataType": "string",
+            "sourceColumn": "MONTH_ID",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "MONTH_ID",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "TotalRevenue",
+            "dataType": "double",
+            "sourceColumn": "TotalRevenue",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "TotalRevenue",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "OrderCount",
+            "dataType": "int64",
+            "sourceColumn": "OrderCount",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "OrderCount",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "vw_MonthlyRevenueTrend",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "True"
+          }
+        ]
+      },
+      {
+        "name": "vw_OrderStatusDistribution",
+        "sourceLineageTag": "[dbo].[vw_OrderStatusDistribution]",
+        "columns": [
+          {
+            "name": "STATUS",
+            "dataType": "string",
+            "sourceColumn": "STATUS",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "STATUS",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "OrderCount",
+            "dataType": "int64",
+            "sourceColumn": "OrderCount",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "OrderCount",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "TotalRevenue",
+            "dataType": "double",
+            "sourceColumn": "TotalRevenue",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "TotalRevenue",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "vw_OrderStatusDistribution",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "True"
+          }
+        ]
+      },
+      {
+        "name": "vw_TopSellingProducts",
+        "sourceLineageTag": "[dbo].[vw_TopSellingProducts]",
+        "columns": [
+          {
+            "name": "PRODUCTCODE",
+            "dataType": "string",
+            "sourceColumn": "PRODUCTCODE",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "PRODUCTCODE",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "PRODUCTLINE",
+            "dataType": "string",
+            "sourceColumn": "PRODUCTLINE",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "PRODUCTLINE",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "TotalQuantity",
+            "dataType": "int64",
+            "sourceColumn": "TotalQuantity",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "TotalQuantity",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "TotalRevenue",
+            "dataType": "double",
+            "sourceColumn": "TotalRevenue",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "TotalRevenue",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "RevenueRank",
+            "dataType": "int64",
+            "sourceColumn": "RevenueRank",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "RevenueRank",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "QuantityRank",
+            "dataType": "int64",
+            "sourceColumn": "QuantityRank",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "QuantityRank",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "vw_TopSellingProducts",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "True"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "a80ccfffc638bfbc3bf83f3fa947766f",
+        "fromTable": "fact_sales",
+        "fromColumn": "PRODUCTCODE",
+        "toTable": "dim_product",
+        "toColumn": "PRODUCTCODE"
+      },
+      {
+        "name": "b6eba8ddbd738951d7289452f01644a5",
+        "fromTable": "fact_sales",
+        "fromColumn": "ORDERDATE",
+        "toTable": "dim_time",
+        "toColumn": "ORDERDATE"
+      },
+      {
+        "name": "c9f34a52e5dd0e04068cde2bd12b7081",
+        "fromTable": "fact_sales",
+        "fromColumn": "STATUS_ID",
+        "toTable": "dim_status",
+        "toColumn": "STATUS_ID"
+      },
+      {
+        "name": "d0e2c1842c9ba6329d824c9827299992",
+        "fromTable": "fact_sales",
+        "fromColumn": "CUSTOMER_ID",
+        "toTable": "dim_customers_new",
+        "toColumn": "CUSTOMER_ID (String)"
+      }
+    ],
+    "expressions": [
+      {
+        "name": "DatabaseQuery",
+        "kind": "m",
+        "expression": "let\n    database = {{TDS_Endpoint}}\nin\n    database\n"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "SourceLineageTagType",
+        "value": "DatabaseFullyQualifiedName"
+      }
+    ]
+  }
+}

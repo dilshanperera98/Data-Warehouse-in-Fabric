@@ -1,0 +1,11 @@
+-- Auto Generated (Do not modify) 9EC8241BDF78CE477ADD4DA11F64F87F26AAC6872F20A043EE9082054030465E
+-- Customer Deal Size Distribution View
+CREATE VIEW vw_CustomerDealSizeDistribution AS
+SELECT 
+    DEALSIZE,
+    COUNT(DISTINCT ORDERNUMBER) AS OrderCount,
+    COUNT(DISTINCT CUSTOMER_ID) AS CustomerCount,
+    SUM(CAST(SALES AS DECIMAL(18, 2))) AS TotalRevenue,
+    AVG(CAST(SALES AS DECIMAL(18, 2))) AS AvgDealAmount
+FROM fact_sales
+GROUP BY DEALSIZE;
