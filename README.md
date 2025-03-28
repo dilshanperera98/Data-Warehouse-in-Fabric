@@ -118,6 +118,11 @@ This project demonstrates the steps taken to process and normalize data, build a
 - **Step 6.1**: Established a connection between Power BI and the SQL views in the Data Warehouse.
 - **Step 6.2**: Used Power BI to create dynamic dashboards and visualizations for business reporting.
 - **Step 6.3**: Ensured that the Power BI dashboards were connected to the latest data in the Data Warehouse, providing real-time insights for decision-makers.
+<img width="1373" alt="Screenshot 2025-03-28 at 10 41 21" src="https://github.com/user-attachments/assets/aa49a75c-e707-4190-a6c7-e6399bca6f8b" />
+
+<img width="1373" alt="Screenshot 2025-03-28 at 10 41 38" src="https://github.com/user-attachments/assets/de262854-a594-42bc-ac8d-3c4d15a6b5ea" />
+
+  
 
 ## Technologies Used
 - Python
